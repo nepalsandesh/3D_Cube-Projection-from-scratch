@@ -4,15 +4,16 @@ from math import *
 import random
 
 
-r,g,b = 236,202,117
+r,g,b = 0,0,0
 # #for random color background
 #r,g,b = random.randint(0, 255),random.randint(0, 255),random.randint(0, 255)
 
 
-COLOR = (r,g,b)
+BG_COLOR = (r,g,b)
 # print(COLOR)
 DOT_COLOR =(255,0,0)
 BLACK = (0,0,0)
+WHITE = (255,255,255)
 WIDTH , HEIGHT = 1920,1080
 
 
@@ -47,8 +48,8 @@ projected_points =[
 
 
 def connect_points(i, j, points):
-    pygame.draw.line(screen, BLACK, (points[i][0], points[i][1]), (points[j][0], points[j][1]))
-
+    pygame.draw.line(screen, WHITE, (points[i][0], points[i][1]), (points[j][0], points[j][1]),width=5)
+    
 clock = pygame.time.Clock()
 while True:
 
@@ -86,7 +87,7 @@ while True:
 
 
     angle += 0.01
-    screen.fill(COLOR)
+    screen.fill(BG_COLOR)
     
 
     #drawing stuff
